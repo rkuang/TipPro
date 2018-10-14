@@ -8,10 +8,22 @@
 
 import UIKit
 
-class CustomSlider: UISlider {
+@IBDesignable class CustomSlider: UISlider {
+    
+    var height: CGFloat = 5.0;
+    
+    @IBInspectable var trackHeight: CGFloat {
+        get {
+            return self.height
+        }
+        set {
+            self.height = newValue
+        }
+    }
+    
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
         var newBounds = super.trackRect(forBounds: bounds)
-        newBounds.size.height = 5
+        newBounds.size.height = self.height
         return newBounds
     }
 }

@@ -37,7 +37,7 @@
                                     <constraint firstItem="oHS-S8-50j" firstAttribute="width" secondItem="xjy-zg-Mn2" secondAttribute="width" id="tHN-AZ-XHl"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-8h-bNx">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-8h-bNx" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
                                 <rect key="frame" x="24" y="89.5" width="327" height="170.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lPS-8t-Huw" userLabel="Total Bill Tip">
@@ -146,7 +146,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxa-Mh-vdv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxa-Mh-vdv" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
                                 <rect key="frame" x="24" y="276" width="327" height="193"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2dh-dy-MQA" userLabel="Tip Split Sliders">
@@ -177,6 +177,11 @@
                                                         <color key="tintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="minimumTrackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="maximumTrackTintColor" red="1" green="0.81124725019999999" blue="0.80665311129999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="updateTipPercentage:" destination="BYZ-38-t0r" eventType="valueChanged" id="FhK-PY-KSg"/>
                                                         </connections>
@@ -208,6 +213,11 @@
                                                         <color key="tintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="minimumTrackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="maximumTrackTintColor" red="1" green="0.81124725019999999" blue="0.80665311129999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="updateSplitLabel:" destination="BYZ-38-t0r" eventType="valueChanged" id="tCr-kF-UA3"/>
                                                         </connections>

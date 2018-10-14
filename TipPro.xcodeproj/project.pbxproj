@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC1B29B22173E9640084DC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1B29B12173E9640084DC2E /* Assets.xcassets */; };
 		DC37568F2174017900CEF287 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC37568E2174017900CEF287 /* CustomSlider.swift */; };
+		DC3756912174037900CEF287 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3756902174037900CEF287 /* DesignableView.swift */; };
 		DC488A6A2172A3110005EB51 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC488A692172A3110005EB51 /* GradientView.swift */; };
 		DCC9D235207595DB008C4A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9D234207595DB008C4A7E /* AppDelegate.swift */; };
 		DCC9D237207595DB008C4A7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9D236207595DB008C4A7E /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		DC1B29B12173E9640084DC2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC37568E2174017900CEF287 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		DC3756902174037900CEF287 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		DC488A692172A3110005EB51 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DCC9D231207595DB008C4A7E /* TipPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC9D234207595DB008C4A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				DCC9D236207595DB008C4A7E /* ViewController.swift */,
 				DC488A692172A3110005EB51 /* GradientView.swift */,
 				DCC9D238207595DB008C4A7E /* Main.storyboard */,
+				DC3756902174037900CEF287 /* DesignableView.swift */,
 				DC1B29B12173E9640084DC2E /* Assets.xcassets */,
 				DCC9D23D207595DB008C4A7E /* LaunchScreen.storyboard */,
 				DCC9D240207595DB008C4A7E /* Info.plist */,
@@ -146,6 +149,7 @@
 				DCC9D237207595DB008C4A7E /* ViewController.swift in Sources */,
 				DCC9D235207595DB008C4A7E /* AppDelegate.swift in Sources */,
 				DC488A6A2172A3110005EB51 /* GradientView.swift in Sources */,
+				DC3756912174037900CEF287 /* DesignableView.swift in Sources */,
 				DC37568F2174017900CEF287 /* CustomSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
