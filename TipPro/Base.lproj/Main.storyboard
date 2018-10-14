@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,45 +15,45 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipPro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="be1-si-Vj7" customClass="GradientView" customModule="TipPro" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5cQ-8q-N8g">
-                                <rect key="frame" x="147.33333333333334" y="68" width="80.666666666666657" height="29.333333333333329"/>
+                                <rect key="frame" x="127" y="44" width="121.5" height="29.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP PRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjy-zg-Mn2">
-                                        <rect key="frame" x="0.0" y="0.0" width="80.666666666666671" height="23.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP PRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjy-zg-Mn2">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oHS-S8-50j">
-                                        <rect key="frame" x="0.0" y="27.333333333333329" width="80.666666666666671" height="2"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="121.5" height="2"/>
                                         <color key="progressTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="trackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </progressView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="oHS-S8-50j" firstAttribute="width" secondItem="xjy-zg-Mn2" secondAttribute="width" id="ZON-dD-fNL"/>
+                                    <constraint firstItem="oHS-S8-50j" firstAttribute="width" secondItem="xjy-zg-Mn2" secondAttribute="width" id="tHN-AZ-XHl"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-8h-bNx">
-                                <rect key="frame" x="24" y="113.33333333333333" width="327" height="170.33333333333337"/>
+                                <rect key="frame" x="24" y="89.5" width="327" height="170.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lPS-8t-Huw" userLabel="Total Bill Tip">
-                                        <rect key="frame" x="24" y="24.000000000000021" width="279" height="122.33333333333331"/>
+                                        <rect key="frame" x="24" y="24" width="279" height="122.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WLD-DY-3QK">
-                                                <rect key="frame" x="85.666666666666657" y="0.0" width="107.66666666666666" height="70.333333333333329"/>
+                                                <rect key="frame" x="85.5" y="0.0" width="108" height="70.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2p-XV-Ive">
-                                                        <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="20"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <color key="textColor" white="0.70349584651898733" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERQ-sX-mGV">
-                                                        <rect key="frame" x="0.0" y="24.000000000000004" width="107.66666666666667" height="46.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="24" width="108" height="46.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
                                                         <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -65,13 +65,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="92j-5S-vJz">
-                                                <rect key="frame" x="0.0" y="78.333333333333314" width="279" height="44"/>
+                                                <rect key="frame" x="0.0" y="78.5" width="279" height="44"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QZp-Vn-2Ei">
-                                                        <rect key="frame" x="0.0" y="0.0" width="135.66666666666666" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="44"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liS-LB-ipG">
-                                                                <rect key="frame" x="48.666666666666671" y="0.0" width="38.333333333333329" height="20"/>
+                                                                <rect key="frame" x="48.5" y="0.0" width="38.5" height="20"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="BILL">
                                                                         <attributes>
@@ -84,7 +84,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$0.00" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qii-eT-jYw">
-                                                                <rect key="frame" x="0.0" y="24" width="135.66666666666666" height="20"/>
+                                                                <rect key="frame" x="0.0" y="24" width="135.5" height="20"/>
                                                                 <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
@@ -98,16 +98,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="42L-fq-F5g">
-                                                        <rect key="frame" x="143.66666666666663" y="0.0" width="135.33333333333337" height="44"/>
+                                                        <rect key="frame" x="143.5" y="0.0" width="135.5" height="44"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1I-OQ-7iw">
-                                                                <rect key="frame" x="54.000000000000007" y="0.0" width="27.333333333333336" height="20"/>
+                                                                <rect key="frame" x="54" y="0.0" width="27.5" height="20"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDs-WA-p5n">
-                                                                <rect key="frame" x="44.666666666666686" y="24" width="46" height="20"/>
+                                                                <rect key="frame" x="45" y="24" width="46" height="20"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxa-Mh-vdv">
-                                <rect key="frame" x="24" y="299.66666666666669" width="327" height="193"/>
+                                <rect key="frame" x="24" y="276" width="327" height="193"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2dh-dy-MQA" userLabel="Tip Split Sliders">
                                         <rect key="frame" x="24" y="24" width="279" height="145"/>
@@ -159,7 +159,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="279" height="20"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oM-wS-YKn">
-                                                                <rect key="frame" x="0.0" y="1.3333333333333144" width="24.333333333333332" height="17.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="1.5" width="24.5" height="17.5"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
                                                                 <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -190,13 +190,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="279" height="20"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPLIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzF-C0-Qls">
-                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="20"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
                                                                 <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmv-QU-119">
-                                                                <rect key="frame" x="268.66666666666669" y="0.0" width="10.333333333333314" height="20"/>
+                                                                <rect key="frame" x="268.5" y="0.0" width="10.5" height="20"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
@@ -218,13 +218,13 @@
                                                 <rect key="frame" x="0.0" y="116" width="279" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPLIT TOTAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbB-Eg-bxv">
-                                                        <rect key="frame" x="0.0" y="5.6666666666666288" width="95.666666666666671" height="17.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="6" width="96" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
                                                         <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB0-Kf-rMs">
-                                                        <rect key="frame" x="211.66666666666669" y="0.0" width="67.333333333333314" height="29"/>
+                                                        <rect key="frame" x="211.5" y="0.0" width="67.5" height="29"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
                                                         <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>

@@ -54,7 +54,6 @@ class ViewController: UIViewController {
     @IBAction func billAmountChanged(_ sender: UITextField) {
         if let amountString = sender.text?.currencyInputFormatting() {
             sender.text = amountString
-            print(amountString)
             let billAmount = amountString.currencyToFloat()!
             roundedBillAmount = round(100 * billAmount) / 100
             calculateTip()
