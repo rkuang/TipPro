@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     @IBAction func billAmountChanged(_ sender: UITextField) {
         if let amountString = sender.text?.currencyInputFormatting() {
             sender.text = amountString
+            print(amountString)
             let billAmount = amountString.currencyToFloat()!
             roundedBillAmount = round(100 * billAmount) / 100
             calculateTip()
@@ -79,11 +80,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        addDoneButtonOnKeyboard()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle       = UIBarStyle.default
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        billAmountField.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction() {
+        billAmountField.resignFirstResponder()
     }
 
 }
@@ -118,7 +140,10 @@ extension String {
     }
     
     func currencyToFloat() -> Float? {
-        return Float(self[self.index(after:self.startIndex)...])
+        var amountWithPrefix = self
+        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+        return Float(amountWithPrefix)!/100
     }
 }
 
