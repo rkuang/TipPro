@@ -51,6 +51,16 @@ class ViewController: UIViewController {
         updateLabels()
     }
     
+    @IBAction func billAmountChanged(_ sender: UITextField) {
+        if let amountString = sender.text?.currencyInputFormatting() {
+            sender.text = amountString
+            print(amountString)
+            let billAmount = amountString.currencyToFloat()!
+            roundedBillAmount = round(100 * billAmount) / 100
+            calculateTip()
+        }
+    }
+    
     func updateLabels() {
         tipAmountLabel.text = String(format: "$%.2f", roundedTipAmount)
         totalAmountLabel.text = String(format: "$%.2f", roundedTotalAmount)
@@ -65,17 +75,6 @@ class ViewController: UIViewController {
         roundedSplitAmount = round(100 * splitAmount) / 100
         updateLabels()
     }
-    
-    @IBAction func billAmountChanged(_ sender: UITextField) {
-        if let amountString = sender.text?.currencyInputFormatting() {
-            sender.text = amountString
-            print(amountString)
-            let billAmount = amountString.currencyToFloat()!
-            roundedBillAmount = round(100 * billAmount) / 100
-            calculateTip()
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
