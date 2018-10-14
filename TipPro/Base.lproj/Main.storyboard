@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -121,7 +121,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxa-Mh-vdv">
-                                <rect key="frame" x="24" y="270" width="327" height="197"/>
+                                <rect key="frame" x="24" y="262" width="327" height="197"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2dh-dy-MQA" userLabel="Tip Split Sliders">
                                         <rect key="frame" x="24" y="24" width="279" height="149"/>
@@ -139,7 +139,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnY-p8-oHA">
-                                                                <rect key="frame" x="248.33333333333329" y="0.0" width="30.666666666666657" height="20.333333333333332"/>
+                                                                <rect key="frame" x="247.33333333333329" y="0.0" width="31.666666666666657" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
@@ -242,7 +242,7 @@
                             <constraint firstItem="QXS-8h-bNx" firstAttribute="top" secondItem="OWG-16-0ZJ" secondAttribute="top" constant="24" id="SjR-VR-lba"/>
                             <constraint firstItem="OWG-16-0ZJ" firstAttribute="trailing" secondItem="QXS-8h-bNx" secondAttribute="trailing" constant="24" id="W3U-t1-Tnq"/>
                             <constraint firstItem="Vxa-Mh-vdv" firstAttribute="centerX" secondItem="be1-si-Vj7" secondAttribute="centerX" id="aUT-Wb-DiZ"/>
-                            <constraint firstItem="Vxa-Mh-vdv" firstAttribute="top" secondItem="QXS-8h-bNx" secondAttribute="bottom" constant="24" id="kCf-wR-dcb"/>
+                            <constraint firstItem="Vxa-Mh-vdv" firstAttribute="top" secondItem="QXS-8h-bNx" secondAttribute="bottom" constant="16" id="kCf-wR-dcb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OWG-16-0ZJ"/>
                         <userDefinedRuntimeAttributes>
