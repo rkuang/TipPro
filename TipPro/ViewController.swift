@@ -43,10 +43,7 @@ class ViewController: UIViewController {
         sender.value = persons
         splitLabel.text = String(format: "%.0f", persons)
         
-        let str = totalAmountLabel.text!
-        let totalAmount = Float(str[str.index(after: str.startIndex)...])!
-        
-        let splitAmount = totalAmount / persons
+        let splitAmount = roundedTotalAmount / persons
         roundedSplitAmount = round(100 * splitAmount) / 100
         updateLabels()
     }
@@ -61,9 +58,11 @@ class ViewController: UIViewController {
     }
     
     func updateLabels() {
-        tipAmountLabel.text = String(format: "$%.2f", roundedTipAmount)
-        totalAmountLabel.text = String(format: "$%.2f", roundedTotalAmount)
-        splitAmountLabel.text = String(format: "$%.2f", roundedSplitAmount)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        tipAmountLabel.text = formatter.string(from: roundedTipAmount as NSNumber)
+        totalAmountLabel.text = formatter.string(from: roundedTotalAmount as NSNumber)
+        splitAmountLabel.text = formatter.string(from: roundedSplitAmount as NSNumber)
     }
     
     func calculateTip() {
