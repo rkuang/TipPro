@@ -58,6 +58,7 @@ class ViewController: UIViewController {
     }
     
     func updateLabels() {
+        // Display updated labels formatted as currency
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         tipAmountLabel.text = formatter.string(from: roundedTipAmount as NSNumber)
