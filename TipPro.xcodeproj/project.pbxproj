@@ -16,6 +16,7 @@
 		DCC9D23A207595DB008C4A7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC9D238207595DB008C4A7E /* Main.storyboard */; };
 		DCC9D23F207595DB008C4A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC9D23D207595DB008C4A7E /* LaunchScreen.storyboard */; };
 		DCD5F180218C021A00224994 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5F17F218C021A00224994 /* SettingsViewController.swift */; };
+		DCD5F185218CC9B100224994 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5F184218CC9B100224994 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DCC9D23E207595DB008C4A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC9D240207595DB008C4A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD5F17F218C021A00224994 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DCD5F184218CC9B100224994 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				DCC9D234207595DB008C4A7E /* AppDelegate.swift */,
 				DCD5F181218C051000224994 /* Views */,
 				DCD5F182218C052500224994 /* Controllers */,
+				DCD5F183218CC97F00224994 /* Helpers */,
 				DCC9D238207595DB008C4A7E /* Main.storyboard */,
 				DC1B29B12173E9640084DC2E /* Assets.xcassets */,
 				DCC9D23D207595DB008C4A7E /* LaunchScreen.storyboard */,
@@ -90,6 +93,14 @@
 				DCD5F17F218C021A00224994 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DCD5F183218CC97F00224994 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DCD5F184218CC9B100224994 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +182,7 @@
 				DC3756912174037900CEF287 /* DesignableView.swift in Sources */,
 				DC37568F2174017900CEF287 /* CustomSlider.swift in Sources */,
 				DCD5F180218C021A00224994 /* SettingsViewController.swift in Sources */,
+				DCD5F185218CC9B100224994 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

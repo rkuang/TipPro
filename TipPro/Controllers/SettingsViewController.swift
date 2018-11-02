@@ -9,6 +9,10 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    @IBOutlet weak var taxRate: UITextField!
+    @IBOutlet weak var roundingOption: UISegmentedControl!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue")
         let vc = segue.destination as! ViewController

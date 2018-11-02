@@ -446,11 +446,11 @@
                                                 <color key="textColor" white="0.70449301163670885" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-hb-71m">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-hb-71m">
                                                 <rect key="frame" x="0.0" y="33.5" width="279" height="29"/>
                                                 <segments>
-                                                    <segment title="UP"/>
                                                     <segment title="NONE"/>
+                                                    <segment title="UP"/>
                                                     <segment title="DOWN"/>
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -560,6 +560,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="roundingOption" destination="RTj-hb-71m" id="qFA-vq-KEf"/>
+                        <outlet property="taxRate" destination="YCc-HQ-wEZ" id="kgO-p4-bHf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oS-AL-j2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K6s-ih-Eqs" userLabel="Exit" sceneMemberID="exit"/>
