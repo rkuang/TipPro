@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5cQ-8q-N8g">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5cQ-8q-N8g" userLabel="Title View">
                                 <rect key="frame" x="127" y="44" width="121.5" height="29.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP PRO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjy-zg-Mn2">
@@ -37,98 +38,106 @@
                                     <constraint firstItem="oHS-S8-50j" firstAttribute="width" secondItem="xjy-zg-Mn2" secondAttribute="width" id="tHN-AZ-XHl"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-8h-bNx" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
-                                <rect key="frame" x="24" y="89.5" width="327" height="170.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-8h-bNx" userLabel="Cost Overview" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
+                                <rect key="frame" x="24" y="97.5" width="327" height="177"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lPS-8t-Huw" userLabel="Total Bill Tip">
-                                        <rect key="frame" x="24" y="24" width="279" height="122.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tUc-ZN-PBp" userLabel="Bill Stack View">
+                                        <rect key="frame" x="16" y="16" width="295" height="19"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WLD-DY-3QK">
-                                                <rect key="frame" x="85.5" y="0.0" width="108" height="70.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2p-XV-Ive">
-                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="20"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                        <color key="textColor" white="0.70349584651898733" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERQ-sX-mGV">
-                                                        <rect key="frame" x="0.0" y="24" width="108" height="46.5"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
-                                                        <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="ERQ-sX-mGV" firstAttribute="centerX" secondItem="WLD-DY-3QK" secondAttribute="centerX" id="bP7-oI-atj"/>
-                                                    <constraint firstItem="A2p-XV-Ive" firstAttribute="centerX" secondItem="WLD-DY-3QK" secondAttribute="centerX" id="lkg-6W-TYP"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="92j-5S-vJz">
-                                                <rect key="frame" x="0.0" y="78.5" width="279" height="44"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QZp-Vn-2Ei">
-                                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="44"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liS-LB-ipG">
-                                                                <rect key="frame" x="48.5" y="0.0" width="38.5" height="20"/>
-                                                                <attributedString key="attributedText">
-                                                                    <fragment content="BILL">
-                                                                        <attributes>
-                                                                            <color key="NSColor" white="0.70334172324289246" alpha="1" colorSpace="calibratedWhite"/>
-                                                                            <font key="NSFont" size="17" name="ArialRoundedMTBold"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$0.00" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qii-eT-jYw">
-                                                                <rect key="frame" x="0.0" y="24" width="135.5" height="20"/>
-                                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
-                                                                <connections>
-                                                                    <action selector="billAmountChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="rPI-Em-VTf"/>
-                                                                </connections>
-                                                            </textField>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="Qii-eT-jYw" firstAttribute="width" secondItem="QZp-Vn-2Ei" secondAttribute="width" id="Lnq-4g-29K"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="42L-fq-F5g">
-                                                        <rect key="frame" x="143.5" y="0.0" width="135.5" height="44"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1I-OQ-7iw">
-                                                                <rect key="frame" x="54" y="0.0" width="27.5" height="20"/>
-                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDs-WA-p5n">
-                                                                <rect key="frame" x="45" y="24" width="46" height="20"/>
-                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vw-fB-SjU">
+                                                <rect key="frame" x="0.0" y="1.5" width="21.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$100.00" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ojZ-qC-JwF">
+                                                <rect key="frame" x="232" y="0.0" width="63" height="19"/>
+                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="billAmountChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="hLV-dx-YGt"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MLm-Mc-ej5" userLabel="Tax Stack View">
+                                        <rect key="frame" x="16" y="51" width="295" height="16.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNx-T4-E4j">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-UK-FBb">
+                                                <rect key="frame" x="257" y="0.0" width="38" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QGc-y9-ih8" userLabel="Tip Stack View">
+                                        <rect key="frame" x="16" y="83.5" width="295" height="16.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emw-XI-Lys">
+                                                <rect key="frame" x="0.0" y="0.0" width="21.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$15.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvp-HD-cqE">
+                                                <rect key="frame" x="249" y="0.0" width="46" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCB-rQ-4Cv" userLabel="Separator View">
+                                        <rect key="frame" x="0.0" y="116" width="327" height="1"/>
+                                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="92j-5S-vJz" secondAttribute="trailing" id="Qnu-Jd-adj"/>
-                                            <constraint firstItem="92j-5S-vJz" firstAttribute="leading" secondItem="lPS-8t-Huw" secondAttribute="leading" id="lBP-hg-3Lc"/>
+                                            <constraint firstAttribute="height" constant="1" id="bA3-7D-wgW"/>
                                         </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sdV-WO-mtH" userLabel="Total Stack View">
+                                        <rect key="frame" x="16" y="133" width="295" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV2-FB-zVk">
+                                                <rect key="frame" x="0.0" y="6" width="33.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$124.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3As-Mj-9ri">
+                                                <rect key="frame" x="201.5" y="0.0" width="93.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="lPS-8t-Huw" firstAttribute="centerX" secondItem="QXS-8h-bNx" secondAttribute="centerX" id="2JA-HG-1ih"/>
-                                    <constraint firstItem="lPS-8t-Huw" firstAttribute="top" secondItem="QXS-8h-bNx" secondAttribute="top" constant="24" id="A0E-H0-bdK"/>
-                                    <constraint firstItem="lPS-8t-Huw" firstAttribute="leading" secondItem="QXS-8h-bNx" secondAttribute="leading" constant="24" id="ihV-WV-KRI"/>
-                                    <constraint firstItem="lPS-8t-Huw" firstAttribute="centerY" secondItem="QXS-8h-bNx" secondAttribute="centerY" id="w2d-jg-405"/>
+                                    <constraint firstAttribute="trailing" secondItem="tUc-ZN-PBp" secondAttribute="trailing" constant="16" id="148-4A-g91"/>
+                                    <constraint firstAttribute="trailing" secondItem="QGc-y9-ih8" secondAttribute="trailing" constant="16" id="7MY-vk-I7D"/>
+                                    <constraint firstItem="uCB-rQ-4Cv" firstAttribute="top" secondItem="QGc-y9-ih8" secondAttribute="bottom" constant="16" id="Aw2-Q5-jw9"/>
+                                    <constraint firstAttribute="trailing" secondItem="uCB-rQ-4Cv" secondAttribute="trailing" id="OOV-jy-GeP"/>
+                                    <constraint firstItem="sdV-WO-mtH" firstAttribute="top" secondItem="uCB-rQ-4Cv" secondAttribute="bottom" constant="16" id="QYF-Hz-exd"/>
+                                    <constraint firstItem="QGc-y9-ih8" firstAttribute="leading" secondItem="QXS-8h-bNx" secondAttribute="leading" constant="16" id="SJp-ax-HlR"/>
+                                    <constraint firstAttribute="trailing" secondItem="MLm-Mc-ej5" secondAttribute="trailing" constant="16" id="W3f-o9-ctv"/>
+                                    <constraint firstItem="sdV-WO-mtH" firstAttribute="leading" secondItem="QXS-8h-bNx" secondAttribute="leading" constant="16" id="aQE-PC-x03"/>
+                                    <constraint firstItem="MLm-Mc-ej5" firstAttribute="top" secondItem="tUc-ZN-PBp" secondAttribute="bottom" constant="16" id="agT-w8-wIO"/>
+                                    <constraint firstItem="QGc-y9-ih8" firstAttribute="top" secondItem="MLm-Mc-ej5" secondAttribute="bottom" constant="16" id="cYQ-8k-1tT"/>
+                                    <constraint firstItem="tUc-ZN-PBp" firstAttribute="top" secondItem="QXS-8h-bNx" secondAttribute="top" constant="16" id="jYY-kx-8Nj"/>
+                                    <constraint firstItem="tUc-ZN-PBp" firstAttribute="leading" secondItem="QXS-8h-bNx" secondAttribute="leading" constant="16" id="q6P-Z8-A4n"/>
+                                    <constraint firstAttribute="bottom" secondItem="sdV-WO-mtH" secondAttribute="bottom" constant="16" id="tOG-qS-Lo2"/>
+                                    <constraint firstItem="uCB-rQ-4Cv" firstAttribute="leading" secondItem="QXS-8h-bNx" secondAttribute="leading" id="uE5-Ze-m12"/>
+                                    <constraint firstAttribute="trailing" secondItem="sdV-WO-mtH" secondAttribute="trailing" constant="16" id="xW6-p6-gXL"/>
+                                    <constraint firstItem="MLm-Mc-ej5" firstAttribute="leading" secondItem="QXS-8h-bNx" secondAttribute="leading" constant="16" id="yGd-iP-x6E"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -158,117 +167,105 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxa-Mh-vdv" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
-                                <rect key="frame" x="24" y="276" width="327" height="197"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxa-Mh-vdv" userLabel="Tip and Split Options" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
+                                <rect key="frame" x="24" y="290.5" width="327" height="230.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2dh-dy-MQA" userLabel="Tip Split Sliders">
-                                        <rect key="frame" x="24" y="24" width="279" height="149"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fLU-Vs-jo1" userLabel="Tip Stack View">
+                                        <rect key="frame" x="16" y="16" width="295" height="16.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="k5E-fR-X3m">
-                                                <rect key="frame" x="0.0" y="0.0" width="279" height="54"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nu1-93-s6U">
-                                                        <rect key="frame" x="0.0" y="0.0" width="279" height="20"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oM-wS-YKn">
-                                                                <rect key="frame" x="0.0" y="1.5" width="24.5" height="17.5"/>
-                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                                                <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnY-p8-oHA">
-                                                                <rect key="frame" x="244" y="0.0" width="35" height="20"/>
-                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="pWF-pA-fRk" customClass="CustomSlider" customModule="TipPro" customModuleProvider="target">
-                                                        <rect key="frame" x="-2" y="24" width="283" height="31"/>
-                                                        <color key="tintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="minimumTrackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="maximumTrackTintColor" red="1" green="0.81124725019999999" blue="0.80665311129999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="updateTipPercentage:" destination="BYZ-38-t0r" eventType="valueChanged" id="FhK-PY-KSg"/>
-                                                        </connections>
-                                                    </slider>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sHE-yl-dgK">
-                                                <rect key="frame" x="0.0" y="62" width="279" height="50"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="jZc-g6-Jf0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="279" height="20"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPLIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzF-C0-Qls">
-                                                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="20"/>
-                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                                                <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmv-QU-119">
-                                                                <rect key="frame" x="268.5" y="0.0" width="10.5" height="20"/>
-                                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="Rzx-E7-nu3" customClass="CustomSlider" customModule="TipPro" customModuleProvider="target">
-                                                        <rect key="frame" x="-2" y="20" width="283" height="31"/>
-                                                        <color key="tintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="minimumTrackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="maximumTrackTintColor" red="1" green="0.81124725019999999" blue="0.80665311129999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="updateSplitLabel:" destination="BYZ-38-t0r" eventType="valueChanged" id="tCr-kF-UA3"/>
-                                                        </connections>
-                                                    </slider>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Tp-kp-6hG">
-                                                <rect key="frame" x="0.0" y="120" width="279" height="29"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPLIT TOTAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbB-Eg-bxv">
-                                                        <rect key="frame" x="0.0" y="6" width="96" height="17.5"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                                        <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB0-Kf-rMs">
-                                                        <rect key="frame" x="211.5" y="0.0" width="67.5" height="29"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
-                                                        <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjo-n2-aBX">
+                                                <rect key="frame" x="0.0" y="0.0" width="21.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifk-Rj-Ot0">
+                                                <rect key="frame" x="266" y="0.0" width="29" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="t8F-WD-4Zf" userLabel="Tip Slider" customClass="CustomSlider" customModule="TipPro" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="48.5" width="299" height="31"/>
+                                        <color key="minimumTrackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="maximumTrackTintColor" red="1" green="0.81124725019999999" blue="0.80665311129999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="updateTipPercentage:" destination="BYZ-38-t0r" eventType="valueChanged" id="Bjs-xk-IyL"/>
+                                        </connections>
+                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ifa-ic-in1" userLabel="Split Stack View">
+                                        <rect key="frame" x="16" y="94.5" width="295" height="16.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cn-4D-dJG">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2X-dV-qin">
+                                                <rect key="frame" x="286.5" y="0.0" width="8.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="xO8-wr-V5c" userLabel="Split Slider" customClass="CustomSlider" customModule="TipPro" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="127" width="299" height="31"/>
+                                        <color key="minimumTrackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="maximumTrackTintColor" red="1" green="0.81124725019999999" blue="0.80665311129999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="updateSplitLabel:" destination="BYZ-38-t0r" eventType="valueChanged" id="vDY-da-fMg"/>
+                                        </connections>
+                                    </slider>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fzt-O8-2go" userLabel="Separator View">
+                                        <rect key="frame" x="0.0" y="173" width="327" height="1"/>
+                                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="8Tp-kp-6hG" firstAttribute="leading" secondItem="2dh-dy-MQA" secondAttribute="leading" id="DWR-Z4-IKx"/>
-                                            <constraint firstAttribute="trailing" secondItem="8Tp-kp-6hG" secondAttribute="trailing" id="OnF-9r-G5t"/>
-                                            <constraint firstItem="sHE-yl-dgK" firstAttribute="width" secondItem="2dh-dy-MQA" secondAttribute="width" id="Rgg-2s-pAM"/>
-                                            <constraint firstItem="k5E-fR-X3m" firstAttribute="width" secondItem="2dh-dy-MQA" secondAttribute="width" id="cX7-nJ-rnj"/>
+                                            <constraint firstAttribute="height" constant="1" id="das-Qg-w22"/>
                                         </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-hS-qVE" userLabel="Split Total Stack View">
+                                        <rect key="frame" x="16" y="190" width="295" height="24.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfD-NM-XBe">
+                                                <rect key="frame" x="0.0" y="4" width="68" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$124.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryD-Ra-GwG">
+                                                <rect key="frame" x="213.5" y="0.0" width="81.5" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
+                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="2dh-dy-MQA" firstAttribute="centerY" secondItem="Vxa-Mh-vdv" secondAttribute="centerY" id="Pbc-Fc-X7N"/>
-                                    <constraint firstItem="2dh-dy-MQA" firstAttribute="top" secondItem="Vxa-Mh-vdv" secondAttribute="top" constant="24" id="Uu7-ET-Dbq"/>
-                                    <constraint firstItem="2dh-dy-MQA" firstAttribute="centerX" secondItem="Vxa-Mh-vdv" secondAttribute="centerX" id="xui-KQ-D5F"/>
-                                    <constraint firstItem="2dh-dy-MQA" firstAttribute="leading" secondItem="Vxa-Mh-vdv" secondAttribute="leading" constant="24" id="ydP-4h-bfH"/>
+                                    <constraint firstAttribute="trailing" secondItem="xO8-wr-V5c" secondAttribute="trailing" constant="16" id="22t-BG-WWg"/>
+                                    <constraint firstAttribute="trailing" secondItem="ifa-ic-in1" secondAttribute="trailing" constant="16" id="5xX-Yw-Nrg"/>
+                                    <constraint firstAttribute="trailing" secondItem="t8F-WD-4Zf" secondAttribute="trailing" constant="16" id="6np-SR-xIC"/>
+                                    <constraint firstItem="Fzt-O8-2go" firstAttribute="top" secondItem="xO8-wr-V5c" secondAttribute="bottom" constant="16" id="8yd-of-uKG"/>
+                                    <constraint firstItem="ifa-ic-in1" firstAttribute="leading" secondItem="Vxa-Mh-vdv" secondAttribute="leading" constant="16" id="GXQ-av-ENI"/>
+                                    <constraint firstItem="xO8-wr-V5c" firstAttribute="top" secondItem="ifa-ic-in1" secondAttribute="bottom" constant="16" id="MhN-sc-Yn8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qh3-hS-qVE" secondAttribute="bottom" constant="16" id="Rgq-EX-dhx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qh3-hS-qVE" secondAttribute="trailing" constant="16" id="WhL-0U-7Ef"/>
+                                    <constraint firstItem="t8F-WD-4Zf" firstAttribute="top" secondItem="fLU-Vs-jo1" secondAttribute="bottom" constant="16" id="XP5-YB-S4c"/>
+                                    <constraint firstItem="xO8-wr-V5c" firstAttribute="leading" secondItem="Vxa-Mh-vdv" secondAttribute="leading" constant="16" id="YuB-zf-9e3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fzt-O8-2go" secondAttribute="trailing" id="ckH-HQ-ego"/>
+                                    <constraint firstItem="fLU-Vs-jo1" firstAttribute="top" secondItem="Vxa-Mh-vdv" secondAttribute="top" constant="16" id="dYG-Wd-S5O"/>
+                                    <constraint firstItem="fLU-Vs-jo1" firstAttribute="leading" secondItem="Vxa-Mh-vdv" secondAttribute="leading" constant="16" id="eFX-Ze-suP"/>
+                                    <constraint firstItem="t8F-WD-4Zf" firstAttribute="leading" secondItem="Vxa-Mh-vdv" secondAttribute="leading" constant="16" id="eba-VE-b1M"/>
+                                    <constraint firstItem="Fzt-O8-2go" firstAttribute="leading" secondItem="Vxa-Mh-vdv" secondAttribute="leading" id="ekF-sp-C49"/>
+                                    <constraint firstItem="Qh3-hS-qVE" firstAttribute="leading" secondItem="Vxa-Mh-vdv" secondAttribute="leading" constant="16" id="f8M-Ro-feH"/>
+                                    <constraint firstItem="ifa-ic-in1" firstAttribute="top" secondItem="t8F-WD-4Zf" secondAttribute="bottom" constant="16" id="h0E-q4-4uz"/>
+                                    <constraint firstAttribute="trailing" secondItem="fLU-Vs-jo1" secondAttribute="trailing" constant="16" id="wzc-2K-shT"/>
+                                    <constraint firstItem="Qh3-hS-qVE" firstAttribute="top" secondItem="Fzt-O8-2go" secondAttribute="bottom" constant="16" id="x8K-Gj-f7b"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -308,15 +305,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.81124725019999999" blue="0.80665311129999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="QXS-8h-bNx" firstAttribute="centerX" secondItem="be1-si-Vj7" secondAttribute="centerX" id="0bK-gx-S7M"/>
                             <constraint firstItem="OWG-16-0ZJ" firstAttribute="trailing" secondItem="Vxa-Mh-vdv" secondAttribute="trailing" constant="24" id="4eC-GL-IoB"/>
+                            <constraint firstItem="Vxa-Mh-vdv" firstAttribute="top" secondItem="QXS-8h-bNx" secondAttribute="bottom" constant="16" id="Df2-d7-9nX"/>
+                            <constraint firstItem="OWG-16-0ZJ" firstAttribute="trailing" secondItem="QXS-8h-bNx" secondAttribute="trailing" constant="24" id="Emq-0e-frS"/>
+                            <constraint firstItem="OWG-16-0ZJ" firstAttribute="trailing" secondItem="aPc-ll-Ngh" secondAttribute="trailing" constant="24" id="GIb-BS-ZWa"/>
                             <constraint firstItem="5cQ-8q-N8g" firstAttribute="centerX" secondItem="be1-si-Vj7" secondAttribute="centerX" id="QIZ-32-aKN"/>
-                            <constraint firstItem="aPc-ll-Ngh" firstAttribute="trailing" secondItem="QXS-8h-bNx" secondAttribute="trailing" id="QcR-sR-4pX"/>
-                            <constraint firstItem="OWG-16-0ZJ" firstAttribute="trailing" secondItem="QXS-8h-bNx" secondAttribute="trailing" constant="24" id="W3U-t1-Tnq"/>
-                            <constraint firstItem="QXS-8h-bNx" firstAttribute="top" secondItem="5cQ-8q-N8g" secondAttribute="bottom" constant="16" id="aE8-ZJ-7zm"/>
+                            <constraint firstItem="QXS-8h-bNx" firstAttribute="top" secondItem="5cQ-8q-N8g" secondAttribute="bottom" constant="24" id="XZh-su-fSu"/>
                             <constraint firstItem="Vxa-Mh-vdv" firstAttribute="centerX" secondItem="be1-si-Vj7" secondAttribute="centerX" id="aUT-Wb-DiZ"/>
+                            <constraint firstItem="QXS-8h-bNx" firstAttribute="leading" secondItem="OWG-16-0ZJ" secondAttribute="leading" constant="24" id="cdw-jx-7Wv"/>
                             <constraint firstItem="aPc-ll-Ngh" firstAttribute="top" secondItem="xjy-zg-Mn2" secondAttribute="top" id="h9b-Dh-pNE"/>
-                            <constraint firstItem="Vxa-Mh-vdv" firstAttribute="top" secondItem="QXS-8h-bNx" secondAttribute="bottom" constant="16" id="kCf-wR-dcb"/>
                             <constraint firstItem="5cQ-8q-N8g" firstAttribute="top" secondItem="OWG-16-0ZJ" secondAttribute="top" constant="24" id="tSF-cz-OwZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OWG-16-0ZJ"/>
@@ -342,17 +339,17 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="billAmountField" destination="Qii-eT-jYw" id="lsA-Ja-wlH"/>
-                        <outlet property="splitAmountLabel" destination="uB0-Kf-rMs" id="sGs-Ui-ukQ"/>
-                        <outlet property="splitLabel" destination="pmv-QU-119" id="IrQ-Fg-aHt"/>
-                        <outlet property="tipAmountLabel" destination="MDs-WA-p5n" id="95B-wD-uxW"/>
-                        <outlet property="tipPercentageLabel" destination="KnY-p8-oHA" id="A3s-s2-gyM"/>
-                        <outlet property="totalAmountLabel" destination="ERQ-sX-mGV" id="Egk-PQ-LSq"/>
+                        <outlet property="billAmountField" destination="ojZ-qC-JwF" id="oUY-xm-hfy"/>
+                        <outlet property="splitAmountLabel" destination="ryD-Ra-GwG" id="rub-Bz-mfv"/>
+                        <outlet property="splitLabel" destination="K2X-dV-qin" id="aTn-rc-YCM"/>
+                        <outlet property="tipAmountLabel" destination="Gvp-HD-cqE" id="abx-Ti-ckb"/>
+                        <outlet property="tipPercentageLabel" destination="Ifk-Rj-Ot0" id="cQg-yi-TwP"/>
+                        <outlet property="totalAmountLabel" destination="3As-Mj-9ri" id="mhC-3v-ta6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="131.52709359605913"/>
+            <point key="canvasLocation" x="138.40000000000001" y="130.88455772113943"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="ERX-Lt-xwJ">
@@ -363,48 +360,57 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9lY-mF-RSc">
-                                <rect key="frame" x="136.5" y="44" width="102.5" height="29.5"/>
+                                <rect key="frame" x="136" y="44" width="103" height="29.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4It-XL-BaA">
-                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="103" height="23.5"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-m8-h1X">
-                                        <rect key="frame" x="0.0" y="27.5" width="102.5" height="2"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="103" height="2"/>
                                         <color key="progressTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="trackTintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </progressView>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsF-EX-pdn" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
-                                <rect key="frame" x="24" y="89.5" width="327" height="68"/>
+                                <rect key="frame" x="24" y="89.5" width="327" height="67"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="mVt-bF-Z30">
-                                        <rect key="frame" x="24" y="24" width="279" height="20"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A9g-Ob-8Oo">
+                                        <rect key="frame" x="24" y="24" width="279" height="19"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAX RATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSl-eA-qvc">
-                                                <rect key="frame" x="0.0" y="0.0" width="72" height="20"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                                <color key="textColor" white="0.7044930116" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9.5%" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YCc-HQ-wEZ">
-                                                <rect key="frame" x="141" y="0.0" width="138" height="20"/>
-                                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="mVt-bF-Z30">
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="19"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSl-eA-qvc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="58.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                        <color key="textColor" white="0.7044930116" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9.50" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YCc-HQ-wEZ">
+                                                        <rect key="frame" x="127.5" y="0.0" width="151.5" height="19"/>
+                                                        <color key="textColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="mVt-bF-Z30" secondAttribute="trailing" id="qLr-YO-qKX"/>
+                                            <constraint firstItem="mVt-bF-Z30" firstAttribute="leading" secondItem="A9g-Ob-8Oo" secondAttribute="leading" id="x5H-qF-qjb"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mVt-bF-Z30" secondAttribute="trailing" constant="24" id="14d-pJ-qeP"/>
-                                    <constraint firstItem="mVt-bF-Z30" firstAttribute="top" secondItem="dsF-EX-pdn" secondAttribute="top" constant="24" id="UsO-34-y1b"/>
-                                    <constraint firstItem="mVt-bF-Z30" firstAttribute="leading" secondItem="dsF-EX-pdn" secondAttribute="leading" constant="24" id="occ-E2-tWz"/>
-                                    <constraint firstAttribute="bottom" secondItem="mVt-bF-Z30" secondAttribute="bottom" constant="24" id="uld-TL-0X1"/>
+                                    <constraint firstAttribute="bottom" secondItem="A9g-Ob-8Oo" secondAttribute="bottom" constant="24" id="H0r-bm-N9p"/>
+                                    <constraint firstAttribute="trailing" secondItem="A9g-Ob-8Oo" secondAttribute="trailing" constant="24" id="M5R-VS-4fr"/>
+                                    <constraint firstItem="A9g-Ob-8Oo" firstAttribute="leading" secondItem="dsF-EX-pdn" secondAttribute="leading" constant="24" id="TbN-OP-JNK"/>
+                                    <constraint firstItem="A9g-Ob-8Oo" firstAttribute="top" secondItem="dsF-EX-pdn" secondAttribute="top" constant="24" id="pYa-jC-Yia"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -435,23 +441,23 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9C-zj-URR" customClass="DesignableView" customModule="TipPro" customModuleProvider="target">
-                                <rect key="frame" x="24" y="173.5" width="327" height="109.5"/>
+                                <rect key="frame" x="24" y="172.5" width="327" height="108.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-QX-cFS">
-                                        <rect key="frame" x="24" y="24" width="279" height="61.5"/>
+                                        <rect key="frame" x="24" y="24" width="279" height="60.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUNDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxS-fN-PKH">
-                                                <rect key="frame" x="97" y="0.0" width="85" height="17.5"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rounding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxS-fN-PKH">
+                                                <rect key="frame" x="107" y="0.0" width="65" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                                 <color key="textColor" white="0.70449301163670885" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-hb-71m">
-                                                <rect key="frame" x="0.0" y="33.5" width="279" height="29"/>
+                                                <rect key="frame" x="0.0" y="32.5" width="279" height="29"/>
                                                 <segments>
-                                                    <segment title="NONE"/>
-                                                    <segment title="UP"/>
-                                                    <segment title="DOWN"/>
+                                                    <segment title="None"/>
+                                                    <segment title="Up"/>
+                                                    <segment title="Down"/>
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </segmentedControl>
@@ -498,10 +504,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmb-nJ-79U">
-                                <rect key="frame" x="94" y="307" width="187.5" height="32"/>
+                                <rect key="frame" x="94" y="305" width="187.5" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                <state key="normal" title="DONE">
+                                <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
