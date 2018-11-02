@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     
@@ -37,10 +38,57 @@ extension String {
         return formatter.string(from: number)!
     }
     
+    func percentageInputFormatting() -> String {
+        var number: NSNumber!
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        
+        var amountWithSuffix = self
+        
+        let regex = try! NSRegularExpression(pattern: "[^.,0-9]", options: .caseInsensitive)
+        amountWithSuffix = regex.stringByReplacingMatches(in: amountWithSuffix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+        
+        let double = (amountWithSuffix as NSString).doubleValue
+        number = NSNumber(value: double)
+        
+        return formatter.string(from: number)!
+    }
+    
     func currencyToFloat() -> Float? {
         var amountWithPrefix = self
         let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
         amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
         return Float(amountWithPrefix)!/100
+    }
+    
+    func percentageToFloat() -> Float {
+        var amountWithSuffix = self
+        let regex = try! NSRegularExpression(pattern: "[^.,0-9]", options: .caseInsensitive)
+        amountWithSuffix = regex.stringByReplacingMatches(in: amountWithSuffix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+        return Float(amountWithSuffix)!/100
+    }
+}
+
+extension UITextField {
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = UIBarStyle.default
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction() {
+        self.resignFirstResponder()
     }
 }
