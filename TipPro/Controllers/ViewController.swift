@@ -22,7 +22,11 @@ class ViewController: UIViewController {
     var roundedTotalAmount: Float = 0.00
     var roundedTipPercentage: Float = 0.15
     var roundedSplitAmount: Float = 0.00
+    
     var persons: Float = 1.0
+    var taxRate: Float = 0.095
+    var roundingOption: Int = 0
+    
     
     @IBAction func updateTipPercentage(_ sender: UISlider) {
         roundedTipPercentage = round(100 * sender.value) / 100
@@ -53,7 +57,7 @@ class ViewController: UIViewController {
             sender.text = amountString
             let billAmount = amountString.currencyToFloat()!
             roundedBillAmount = round(100 * billAmount) / 100
-            calculateTip()
+            calculateTotal()
         }
     }
     
@@ -66,48 +70,29 @@ class ViewController: UIViewController {
         splitAmountLabel.text = formatter.string(from: roundedSplitAmount as NSNumber)
     }
     
-    func calculateTip() {
+    func calculateTotal() {
         let tipAmount = roundedBillAmount * roundedTipPercentage
         roundedTipAmount = round(100 * tipAmount) / 100
-        roundedTotalAmount = roundedBillAmount + roundedTipAmount
+        
+        let taxAmount = roundedBillAmount * taxRate
+        let roundedTaxAmount = round(100 * taxAmount) / 100
+        
+        roundedTotalAmount = roundedBillAmount + roundedTipAmount + roundedTaxAmount
+        
         let splitAmount = roundedTotalAmount / persons
         roundedSplitAmount = round(100 * splitAmount) / 100
+        
         updateLabels()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        addDoneButtonOnKeyboard()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func addDoneButtonOnKeyboard() {
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
-        doneToolbar.barStyle       = UIBarStyle.default
-        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
-        
-        var items = [UIBarButtonItem]()
-        items.append(flexSpace)
-        items.append(done)
-        
-        doneToolbar.items = items
-        doneToolbar.sizeToFit()
-        
-        billAmountField.inputAccessoryView = doneToolbar
-    }
-    
-    @objc func doneButtonAction() {
-        billAmountField.resignFirstResponder()
+        billAmountField.addDoneButtonOnKeyboard()
     }
     
     @IBAction func unwindToMainView(unwindSegue: UIStoryboardSegue) {
-        
+        print("handle unwind")
     }
 
 }

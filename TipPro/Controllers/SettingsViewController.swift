@@ -13,9 +13,15 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var taxRate: UITextField!
     @IBOutlet weak var roundingOption: UISegmentedControl!
     
+    override func viewDidLoad() {
+        taxRate.addDoneButtonOnKeyboard()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("preparing for segue")
-        let vc = segue.destination as! ViewController
-        vc.totalAmountLabel.text = "Works!"
+        print("taxRate = \(taxRate.text!.percentageToFloat())")
+        print("roundingOption = \(roundingOption.selectedSegmentIndex)")
+//        let vc = segue.destination as! ViewController
+//        vc.taxRate = taxRate.text!.percentageToFloat()
     }
 }
