@@ -56,11 +56,11 @@ extension String {
         return formatter.string(from: number)!
     }
     
-    func currencyToFloat() -> Float? {
+    func currencyToDouble() -> Double {
         var amountWithPrefix = self
         let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
         amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
-        return Float(amountWithPrefix)!/100
+        return Double(amountWithPrefix)!/100
     }
     
     func percentageToFloat() -> Float {

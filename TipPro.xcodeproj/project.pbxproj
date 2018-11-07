@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC1B29B22173E9640084DC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1B29B12173E9640084DC2E /* Assets.xcassets */; };
+		DC1C237F21939B9300BB4B44 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C237E21939B9300BB4B44 /* UserDefaultsManager.swift */; };
 		DC37568F2174017900CEF287 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC37568E2174017900CEF287 /* CustomSlider.swift */; };
 		DC3756912174037900CEF287 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3756902174037900CEF287 /* DesignableView.swift */; };
 		DC488A6A2172A3110005EB51 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC488A692172A3110005EB51 /* GradientView.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		DC1B29B12173E9640084DC2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC1C237E21939B9300BB4B44 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		DC37568E2174017900CEF287 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		DC3756902174037900CEF287 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		DC488A692172A3110005EB51 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				DCD5F184218CC9B100224994 /* Extensions.swift */,
+				DC1C237E21939B9300BB4B44 /* UserDefaultsManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				DCC9D235207595DB008C4A7E /* AppDelegate.swift in Sources */,
 				DC488A6A2172A3110005EB51 /* GradientView.swift in Sources */,
 				DC3756912174037900CEF287 /* DesignableView.swift in Sources */,
+				DC1C237F21939B9300BB4B44 /* UserDefaultsManager.swift in Sources */,
 				DC37568F2174017900CEF287 /* CustomSlider.swift in Sources */,
 				DCD5F180218C021A00224994 /* SettingsViewController.swift in Sources */,
 				DCD5F185218CC9B100224994 /* Extensions.swift in Sources */,
