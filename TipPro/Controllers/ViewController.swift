@@ -10,54 +10,40 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var billAmountField: UITextField!
+    @IBOutlet weak var taxAmountLabel: UILabel!
     @IBOutlet weak var tipAmountLabel: UILabel!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    
     @IBOutlet weak var tipPercentageLabel: UILabel!
     @IBOutlet weak var splitLabel: UILabel!
     @IBOutlet weak var splitAmountLabel: UILabel!
-
-    var roundedBillAmount: Float = 0.00
-    var roundedTipAmount: Float = 0.00
-    var roundedTotalAmount: Float = 0.00
-    var roundedTipPercentage: Float = 0.15
-    var roundedSplitAmount: Float = 0.00
     
-    var persons: Float = 1.0
-    var taxRate: Float = 0.095
-    var roundingOption: Int = 0
+    var currentBill = Bill()
+    var tipPercent: Double = 0.15
+    var taxRate: Double = 0.095
     
-    
-    @IBAction func updateTipPercentage(_ sender: UISlider) {
-        roundedTipPercentage = round(100 * sender.value) / 100
-        tipPercentageLabel.text = String(format: "%.0f%%", roundedTipPercentage * 100)
+    @IBAction func tipPercentageChanged(_ sender: UISlider) {
+        tipPercent = Double(round(100 * sender.value)) / 100
         
-        let tipAmount = roundedBillAmount * roundedTipPercentage
-        roundedTipAmount = round(100 * tipAmount) / 100
-        roundedTotalAmount = roundedBillAmount + roundedTipAmount
-        
-        let splitAmount = roundedTotalAmount / persons
-        roundedSplitAmount = round(100 * splitAmount) / 100
+        currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate)
         updateLabels()
     }
     
     @IBAction func updateSplitLabel(_ sender: UISlider) {
-        persons = sender.value
-        persons.round(.toNearestOrAwayFromZero)
-        sender.value = persons
+        let persons = Double(round(sender.value))
         splitLabel.text = String(format: "%.0f", persons)
-        
-        let splitAmount = roundedTotalAmount / persons
-        roundedSplitAmount = round(100 * splitAmount) / 100
+        currentBill.setPersons(p: persons)
         updateLabels()
     }
     
     @IBAction func billAmountChanged(_ sender: UITextField) {
         if let amountString = sender.text?.currencyInputFormatting() {
+            // update textfield with currency formatting
             sender.text = amountString
-            let billAmount = amountString.currencyToFloat()!
-            roundedBillAmount = round(100 * billAmount) / 100
-            calculateTotal()
+            currentBill.setBillAmount(bill: amountString.currencyToDouble())
+            currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate)
+            updateLabels()
         }
     }
     
@@ -65,34 +51,22 @@ class ViewController: UIViewController {
         // Display updated labels formatted as currency
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        tipAmountLabel.text = formatter.string(from: roundedTipAmount as NSNumber)
-        totalAmountLabel.text = formatter.string(from: roundedTotalAmount as NSNumber)
-        splitAmountLabel.text = formatter.string(from: roundedSplitAmount as NSNumber)
-    }
-    
-    func calculateTotal() {
-        let tipAmount = roundedBillAmount * roundedTipPercentage
-        roundedTipAmount = round(100 * tipAmount) / 100
-        
-        let taxAmount = roundedBillAmount * taxRate
-        let roundedTaxAmount = round(100 * taxAmount) / 100
-        
-        roundedTotalAmount = roundedBillAmount + roundedTipAmount + roundedTaxAmount
-        
-        let splitAmount = roundedTotalAmount / persons
-        roundedSplitAmount = round(100 * splitAmount) / 100
-        
-        updateLabels()
+        taxAmountLabel.text = formatter.string(from: currentBill.getTaxAmount() as NSNumber)
+        tipAmountLabel.text = formatter.string(from: currentBill.getTipAmount() as NSNumber)
+        totalAmountLabel.text = formatter.string(from: currentBill.getTotalAmount() as NSNumber)
+        tipPercentageLabel.text = String(format: "%.0f%%", tipPercent * 100)
+        splitAmountLabel.text = formatter.string(from: currentBill.getSplitAmount() as NSNumber)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         billAmountField.addDoneButtonOnKeyboard()
+        print(UserDefaultsManager.settings)
     }
     
     @IBAction func unwindToMainView(unwindSegue: UIStoryboardSegue) {
         print("handle unwind")
+        print(UserDefaultsManager.settings)
     }
 
 }
