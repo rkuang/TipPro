@@ -17,11 +17,18 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var splitLimit: UITextField!
     
     override func viewDidLoad() {
+        configureKeyboards()
+        applySettings()
+    }
+    
+    func configureKeyboards() {
         taxRate.addDoneButtonOnKeyboard()
         minTip.addDoneButtonOnKeyboard()
         maxTip.addDoneButtonOnKeyboard()
         splitLimit.addDoneButtonOnKeyboard()
-        
+    }
+    
+    func applySettings() {
         let settings = UserDefaultsManager.settings
         roundingOption.selectedSegmentIndex = settings["roundingOption"]!
         minTip.text = String(format: "%d", settings["minTip"]!)
@@ -29,13 +36,34 @@ class SettingsViewController: UIViewController {
         splitLimit.text = String(format: "%d", settings["splitLimit"]!)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("preparing for segue")
-//        UserDefaultsManager.settings = [
-//            "roundingOption": roundingOption.selectedSegmentIndex as Int,
-//            "minTip": Int(minTip.text!),
-//            "maxTip": Int(maxTip.text!),
-//            "splitLimit": Int(splitLimit.text!),
-//            ] as! Dictionary<String, Int>
+    @IBAction func textFieldChanged(_ sender: UITextField) {
+        sender.text = String(format: "%d", sender.text?.toInt() ?? 0)
+    }
+    
+    @IBAction func minEditingEnded(_ sender: UITextField) {
+        if sender.text!.toInt() > maxTip.text!.toInt() {
+            sender.text = maxTip.text!
+        }
+    }
+    @IBAction func maxEditingEnded(_ sender: UITextField) {
+        if sender.text!.toInt() > 100 {
+            sender.text = "100";
+        } else if sender.text!.toInt() < minTip.text!.toInt() {
+            sender.text = minTip.text!
+        }
+    }
+    
+    @IBAction func doneAction(_ sender: Any) {
+        print("Done pressed")
+        
+        if let minTip = minTip.text, let maxTip = maxTip.text, let splitLimit = splitLimit.text {
+            UserDefaultsManager.settings = [
+                "roundingOption": roundingOption.selectedSegmentIndex,
+                "minTip": minTip.toInt(),
+                "maxTip": maxTip.toInt(),
+                "splitLimit": splitLimit.toInt()
+                ]
+        }
+        self.performSegue(withIdentifier: "unwindToMain", sender: self)
     }
 }
