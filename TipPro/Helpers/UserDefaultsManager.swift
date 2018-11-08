@@ -10,6 +10,7 @@ import Foundation
 
 class UserDefaultsManager {
     static let SETTINGS_KEY: String = "settings"
+    static let TIP_KEY: String = "tip"
     
     static var settings: Dictionary<String, Int> {
         get {
@@ -18,6 +19,15 @@ class UserDefaultsManager {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: SETTINGS_KEY)
+        }
+    }
+    
+    static var tipPercentage: Float {
+        get {
+            return UserDefaults.standard.float(forKey: TIP_KEY)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: TIP_KEY)
         }
     }
 }
