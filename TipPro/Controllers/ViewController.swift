@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitLabel: UILabel!
     @IBOutlet weak var splitAmountLabel: UILabel!
     
+    @IBOutlet weak var tipSlider: CustomSlider!
+    @IBOutlet weak var splitSlider: CustomSlider!
+    
     var currentBill = Bill()
     var tipPercent: Double = 0.15
     var taxRate: Double = 0.095
@@ -61,13 +64,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         billAmountField.addDoneButtonOnKeyboard()
-        print(UserDefaultsManager.settings)
+        applySettings()
     }
     
     @IBAction func unwindToMainView(unwindSegue: UIStoryboardSegue) {
         print("handle unwind")
-        print(UserDefaultsManager.settings)
+        applySettings()
     }
-
+    
+    func applySettings() {
+        print(UserDefaultsManager.settings)
+        let settings = UserDefaultsManager.settings
+        tipSlider.minimumValue = Float(settings["minTip"]!) / 100
+        tipSlider.maximumValue = Float(settings["maxTip"]!) / 100
+        
+        splitSlider.maximumValue = Float(settings["splitLimit"]!)
+    }
 }
 
