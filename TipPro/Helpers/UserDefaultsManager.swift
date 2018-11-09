@@ -22,9 +22,9 @@ class UserDefaultsManager {
         }
     }
     
-    static var tipPercentage: Float {
+    static var tipPercentage: Double {
         get {
-            return UserDefaults.standard.float(forKey: TIP_KEY)
+            return UserDefaults.standard.object(forKey: TIP_KEY) as! Double? ?? 0.15
         }
         set {
             UserDefaults.standard.set(newValue, forKey: TIP_KEY)

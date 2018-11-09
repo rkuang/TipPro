@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     @IBAction func tipPercentageChanged(_ sender: UISlider) {
         tipPercent = Double(round(100 * sender.value)) / 100
+        UserDefaultsManager.tipPercentage = tipPercent
         
         currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate)
         updateLabels()
@@ -78,7 +79,11 @@ class ViewController: UIViewController {
         tipSlider.minimumValue = Float(settings["minTip"]!) / 100
         tipSlider.maximumValue = Float(settings["maxTip"]!) / 100
         
+        tipSlider.value = Float(UserDefaultsManager.tipPercentage)
+        tipPercent = UserDefaultsManager.tipPercentage
+        
         splitSlider.maximumValue = Float(settings["splitLimit"]!)
+        updateLabels()
     }
 }
 
