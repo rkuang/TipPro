@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         tipPercent = Double(round(100 * sender.value)) / 100
         UserDefaultsManager.tipPercentage = tipPercent
         
-        currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate, rounding: roundingOption)
         updateLabels()
     }
     
@@ -47,12 +46,13 @@ class ViewController: UIViewController {
             // update textfield with currency formatting
             sender.text = amountString
             currentBill.setBillAmount(bill: amountString.currencyToDouble())
-            currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate, rounding: roundingOption)
             updateLabels()
         }
     }
     
     func updateLabels() {
+        currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate, rounding: roundingOption)
+
         // Display updated labels formatted as currency
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

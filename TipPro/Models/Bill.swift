@@ -44,7 +44,6 @@ class Bill {
     
     func setPersons(p: Double) {
         persons = p
-        splitAmount = round(100 * (totalAmount / persons)) / 100
     }
     
     func calculateTotal(tipPercent: Double, taxRate: Double, rounding: Int) {
