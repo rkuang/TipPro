@@ -8,6 +8,10 @@
 
 import Foundation
 
+let NO_ROUND = 0
+let ROUND_UP = 1
+let ROUND_DOWN = 2
+
 class Bill {
     
     private var billAmount: Double = 0.0
@@ -43,11 +47,23 @@ class Bill {
         splitAmount = round(100 * (totalAmount / persons)) / 100
     }
     
-    func calculateTotal(tipPercent: Double, taxRate: Double) {
+    func calculateTotal(tipPercent: Double, taxRate: Double, rounding: Int) {
         tipAmount = round(100 * billAmount * tipPercent) / 100
 //        taxAmount = round(100 * billAmount * taxRate) / 100
         
         totalAmount = round(100 * (billAmount + taxAmount + tipAmount)) / 100
+        
+        switch rounding {
+        case ROUND_UP:
+            totalAmount.round(.up)
+        case ROUND_DOWN:
+            totalAmount.round(.down)
+        default:
+            break
+        }
+        
+        tipAmount = totalAmount - billAmount
+        
         splitAmount = round(100 * (totalAmount / persons)) / 100
     }
 }

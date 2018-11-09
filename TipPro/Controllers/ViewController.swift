@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitSlider: CustomSlider!
     
     var currentBill = Bill()
+    var roundingOption: Int = 0
     var tipPercent: Double = 0.15
     var taxRate: Double = 0.095
     
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
         tipPercent = Double(round(100 * sender.value)) / 100
         UserDefaultsManager.tipPercentage = tipPercent
         
-        currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate)
+        currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate, rounding: roundingOption)
         updateLabels()
     }
     
@@ -46,7 +47,7 @@ class ViewController: UIViewController {
             // update textfield with currency formatting
             sender.text = amountString
             currentBill.setBillAmount(bill: amountString.currencyToDouble())
-            currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate)
+            currentBill.calculateTotal(tipPercent: tipPercent, taxRate: taxRate, rounding: roundingOption)
             updateLabels()
         }
     }
@@ -76,6 +77,9 @@ class ViewController: UIViewController {
     func applySettings() {
         print(UserDefaultsManager.settings)
         let settings = UserDefaultsManager.settings
+        
+        roundingOption = settings["roundingOption"]!
+        
         tipSlider.minimumValue = Float(settings["minTip"]!) / 100
         tipSlider.maximumValue = Float(settings["maxTip"]!) / 100
         
