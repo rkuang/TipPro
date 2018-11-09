@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         tipSlider.maximumValue = Float(settings["maxTip"]!) / 100
         
         tipSlider.value = Float(UserDefaultsManager.tipPercentage)
-        tipPercent = UserDefaultsManager.tipPercentage
+        tipPercent = Double(tipSlider.value)
         
         splitSlider.maximumValue = Float(settings["splitLimit"]!)
         updateLabels()
